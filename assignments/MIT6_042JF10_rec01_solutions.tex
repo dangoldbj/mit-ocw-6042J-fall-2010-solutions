@@ -31,8 +31,30 @@
 
         \item $\neg A = A$ nand $A$.
 
-        \item 
+        \item true is $A$ nand $(A$ nand $A)$. 
+            Similarly, false is $(A$ nand $(A$ nand $A))$ nand $(A$ nand $(A$ nand $A))$
     }
+\end{solution}
+
+\begin{solution}
+    Split the 12 coins in two groups of 6.
+    Weigh the two groups in the balance scale.
+    Since one of the coin is heavier the 
+    balance scale will tilt towards the heavy side.
+    Now split the 6 coins in the heavy side into two groups of 3.
+    Weigh the two groups in the balance scale.
+    Since one of the coin is heavier the 
+    balance scale will tilt towards the heavy side.
+    Now split the 3 coins in the heavy side into three groups of 1.
+    Put any of the two coins on the balance scale. Now only two cases can arise:
+    \enumr {
+        \item Balance scale is balanced. This implies the coin that was not kept in the balance scale is the heavier coin.
+        \item Balance scale tilts towards one of the sides. The heavier side has the heavy coin.
+    }
+\end{solution}
+
+\begin{solution}
+    
 \end{solution}
 
 \end{document}
