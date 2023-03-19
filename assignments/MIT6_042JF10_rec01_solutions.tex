@@ -54,7 +54,40 @@
 \end{solution}
 
 \begin{solution}
-    
+    By Contrapositive: If $r^{1/5}$ is not irrational then $r$ is not irrational.
+    \begin{proof}
+        Let, $r^{1/5} = (a/b)$. Then, $r = (a/b)^{5} = a^{5}/b^{5}$.
+        $a, b \in \mathbb{Z} \implies a^{5}, b^{5} \in \mathbb{Z}$.
+        Thus $r \in \mathbb{Q}$.
+    \end{proof}
+\end{solution}
+
+\begin{solution}
+    $w^{2} + x^{2} + y^{2} = z^{2}$.
+    Let, $O(x)$ and $E(x)$ be predicates for $x$ is odd and $x$ is even respectively.
+    \begin{corol}[$\forall n \in \mathbb{N}, 2n$ is even]
+        By induction.
+        For $n = 0$, $2 * 0 = 0$ which is even.
+        Then, $2 * (n + 1) = 2n + 2$
+    \end{corol}
+    \begin{corol}[$\forall n \in \mathbb{N}, 2n + 1$ is odd]
+        By induction,
+        Base case, $n = 0$. Then, $2 * 0 + 1 = 1$ which is odd.
+        Suppose inductively that it is true for all $n$.
+        $2 * (n + 1) + 1 = (2n + 2) + 1$ which is odd.
+    \end{corol}
+    \begin{corol}[$\forall x \in \mathbb{Z} \land E(x)$ and $\forall y \in \mathbb{Z} \land O(x)$, $O(x + y)$ is true]
+        $x = 2j + 1$, $y = 2i$.
+        $x + y = 2(i + j) + 1$ which is odd.
+    \end{corol}
+    \begin{lemm}[$\forall x \in \mathbb{Z} : O(x) \implies x^{n} \in \mathbb{Z}: O(x^{n})$.]
+        By induction. Let, $x = 2j + 1$.
+        For $n = 0$, $x^{0} = 1$ which is odd.
+        Assume inductively that it is true for all $n$.
+        
+        Now, $x^{n + 1} = x * x^{n} = (2j + 1) * o$ for some odd number $o$.
+        $2jo + o$ is odd since $2jo$ is even and $o$ is odd. Even plus odd is odd.
+    \end{lemm}
 \end{solution}
 
 \end{document}
