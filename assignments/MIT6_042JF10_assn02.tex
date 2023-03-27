@@ -89,6 +89,73 @@
 
 \end{solution}
 
+
+\begin{solution}
+    By induction.
+    
+    Suppose that the num edges can reach beyond the grid.
+    Then for any $m < n$, num edges is atmost $4m$ which is less than $4n$.
+    And for full grid num edges is exactly $4n$.
+
+    Let $x$ denote the num edges.
+
+    States:
+    If a new square is infected 
+        it will cancel at least two edges and add at most two edges.
+    After any legal move the state of the grid will change in following ways:
+
+    \enumr {
+        \item $x$ will remain unchanged.
+        \item $x$ will decrease by 1.
+        \item $x$ will decrease by 2.
+        \item $x$ will decrease by 4.
+    }
+
+    Induction Hypothesis: $P(m)$ implies after $m$ time-steps, 
+        $x < 4n$ for $n \times n$ grid.
+
+    Base Case: $P(0)$ is true. Because, $m < n$ and $x \leq 4m < 4n$.
+
+    Assume it is true for all $m$ for purposes of induction.
+
+    After $m + 1$ steps the state changes. But the new state  $x'$
+    will be $x' \leq x$. Since $x < 4n$ (from induction hypothesis).
+    $x' < 4n$.
+
+    It follows that $P(m) \implies P(m + 1)$.
+    Thus $P(m)$ is true.
+\end{solution}
+
+\begin{solution}
+    The inductive hypothesis only covers $a^{k}$ not $a^{-1}$.
+    Assuming $a^{-1} = 1$ requires base case to consider $k = 1$.
+    But the base case only considers $k = 0$.
+    Simply assuming $a^{-1} = a^{1} = 1$ assumes $P(k + 1)$ is true implicitly.
+    But the proposition $P(k + 1)$ is the thing we are trying to prove.
+\end{solution}
+
+\begin{solution}
+    By Strong Induction:
+    $P(k)$ be $G_{k} = 3^{k} - 2^{k}$.
+
+    Base Case: For $k = 0$. $G_{0} = 0$ which is true.
+
+    Inductive Step: Assume $P(0) \land P(1) \cdots P(k)$ is true.
+
+    $P(k + 1)$ is $G_{k + 1} = 3^{k+1} - 2^{k + 1}$.
+    So, $G_{k + 1} = 5 G_{n} - 6 G_{n - 1} 
+    = 5 (3^{n} - 2^{n}) - 6 (3^{n - 1} - 2^{n - 1})
+    = 5 \cdot 3^{n} - 5 \cdot 2^{n} - 2 \cdot 3^{n} + 3 \cdot 2^{n}
+    = 3 \cdot 3^{n} - 2 \cdot 2^{n}
+    = 3^{n + 1} - 2^{n + 1}
+    $
+
+    which implies that $P(k + 1)$ holds.
+    If follows by induction that $P(k)$ holds for all $k \in \mathbb{N}$.
+
+
+\end{solution}
+
 \end{document}
 
 %%% Local Variables:
