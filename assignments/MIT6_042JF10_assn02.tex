@@ -158,6 +158,62 @@
 
 \end{solution}
 
+
+
+\begin{solution}
+    \enum{
+        \item No. A row move moves a tile from cell $i$ to either $i + 1$ or $i - 1$.
+            Nothing else moves. 
+            If you're going from $i$ to $i + 1$, 
+            everything leq than $i - 1$ and geq than $i + 2$ stays the same 
+            and relative order does not change.
+
+            If you're going from $i$ to $i - 1$,
+            everything leq than $i -2$ and geq than $i + 1$ stays the same
+            and relative order does not change.
+
+        \item A column move changes relative order of 2 pairs of letters.
+        
+        A column move moves a tile from cell $i$ to either $i + 3$ or $i - 3$.
+        When an item moves 3 positions it changes order with 2 items $i + 1, i + 2$ or $i - 1, i - 2$.
+
+        \item A row move does not change the relative order of items in the grid.
+        Hence it does not affect the parity of the number of inversions.
+
+        \item A column move changes the relative order of 2 pairs of letters.
+        The number of inversions either stays the same 
+        or increases by 2 or decreases by 2 during a column move.
+        Adding/subtracting 2 does not change parity.
+        Thus a column move doesn't change parity of inversions.
+
+        \item In every state reachable from the given configuration of the grid
+        the parity of number of inversions is odd.
+
+        \begin{proof}
+            By Induction:
+            $P(n)$ be the proposition that after $n$ steps the parity of
+            number of inversions is odd.
+
+            Base Case: For $n=0$. $P(0)$ is true. Since, we begin with odd parity and do nothing.
+
+            Inductive Step: Assume it is true for all $n$. To show $P(n) \implies P(n + 1)$
+            Consider a sequence of $n + 1$ moves, $m_{1}, m_{2}, \cdots m_{n + 1}$.
+
+            Now by the inductive hypothesis, we know that
+            after $m_{1} \cdots m_{n}$ is odd.
+
+            Now, we know the parity of number of inversions does not change during
+            $m_{n + 1}$. This implies that parity after $m_{1}, m_{2}, \cdots m_{n + 1}$
+            is still odd. Thus, $P(n + 1)$ holds.
+
+
+
+
+        \end{proof}
+
+    }
+\end{solution}
+
 \end{document}
 
 %%% Local Variables:
