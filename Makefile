@@ -4,5 +4,5 @@ build:
 	cd assignments && pdflatex *.tex
 
 clean:
-	cd assignments && rm -f *.toc *.log *.out *.pdf *.aux *.tex~ *.thm
+	cd assignments && rm -f *.toc *.log *.out *.aux *.tex~ *.thm
 
