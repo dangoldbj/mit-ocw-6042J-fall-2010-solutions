@@ -1,0 +1,73 @@
+\documentclass[titlepage,12pt]{book}
+\usepackage[utf8]{inputenc}
+
+\include{../preamble}
+
+\begin{document}
+
+\mainmatter
+
+\begin{solution}
+    Sequence $a_{1},a_{2},a_{3},a_{4},a_{5}$
+    \enum {
+        \item
+            \begin{proof} 
+                By Contradiction.
+                Suppose that there is no 3-chain in our sequence and $a_{1} \leq a_{3}$.
+                If $a_{4} \geq a_{3}$ then we have 3-chain with $a_{1}, a_{3}, a_{4}$.
+                This implies $a_{4} < a_{3}$.
+                
+                If $a_{4} < a_{3}$ then $a_{1} < a_{2}$ and $a_{1} \leq a_{3}$ implies $a_{3} < a_{2}$.
+                So, $a_{4} < a_{3} < a_{2}$ is a 3-chain.
+                This implies $a_{4} \geq a_{3}$.
+                Contradiction.
+
+                Thus $a_{1} > a_{3}$.
+            \end{proof}
+
+        \item 
+            \begin{proof}
+                If there is no 3-chain then $a_{1} > a_{3}$.
+                So, $a_{3} < a_{2}$. Now, $a_{4} >  a_{3}$ and $a_{4} < a_{2}$ for no 3-chain to exist.
+                Thus, $a_{3} < a_{4} < a_{2}$.
+            \end{proof}
+
+        \item
+            \begin{proof}
+                We have $a_{1} < a_{2}$ and $a_{3} < a_{4} < a_{2}$.
+
+                $a_{5} \geq a_{2}$ will result in 3-chain $a_{1}, a_{2}, a_{5}$
+                $a_{5} \geq a_{4}$ will result in 3-chain $a_{3}, a_{4}, a_{5}$
+                $a_{5} \geq a_{1}$ will result in 3-chain $a_{3}, a_{4}, a_{5}$ or $a_{2}, a_{4}, a_{5}$.
+                $a_{5} \geq a_{3}$ will result in 3-chain $a_{2}, a_{4}, a_{5}$.
+                $a_{5} \leq a_{3}$ will result in 3-chain $a_{2}, a_{3}, a_{5}$.
+
+                Thus any value of $a_{5}$ produces a 3-chain.
+            \end{proof}
+
+        \item
+            \begin{proof}
+                By Contradiction.
+                Suppose $\exists a_{1},a_{2},a_{3},a_{4},a_{5}$ such that no 3-chain exists.
+
+                If $a_{1} > a_{2}$ then,
+                $a_{2} < a_{3} < a_{1}$ then any $a_{4}$ will create 3-chain.
+
+                $a_{2} < a_{1} < a_{4} < a_{3}$ any $a_{5}$ will create 3-chain.
+
+
+                If $a_{1} < a_{2}$ then, $a_{1} > a_{3}$ and $a_{3} < a_{4} < a_{2}$.
+                But now, any $a_{5}$ will create a 3-chain.
+
+                Contradiction.
+            \end{proof}
+    }
+\end{solution}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
