@@ -64,30 +64,50 @@
 
 \begin{solution}
     $w^{2} + x^{2} + y^{2} = z^{2}$.
-    Let, $O(x)$ and $E(x)$ be predicates for $x$ is odd and $x$ is even respectively.
-    \begin{corol}[$\forall n \in \mathbb{N}, 2n$ is even]
-        By induction.
-        For $n = 0$, $2 * 0 = 0$ which is even.
-        Then, $2 * (n + 1) = 2n + 2$
-    \end{corol}
-    \begin{corol}[$\forall n \in \mathbb{N}, 2n + 1$ is odd]
-        By induction,
-        Base case, $n = 0$. Then, $2 * 0 + 1 = 1$ which is odd.
-        Suppose inductively that it is true for all $n$.
-        $2 * (n + 1) + 1 = (2n + 2) + 1$ which is odd.
-    \end{corol}
-    \begin{corol}[$\forall x \in \mathbb{Z} \land E(x)$ and $\forall y \in \mathbb{Z} \land O(x)$, $O(x + y)$ is true]
-        $x = 2j + 1$, $y = 2i$.
-        $x + y = 2(i + j) + 1$ which is odd.
-    \end{corol}
-    \begin{lemm}[$\forall x \in \mathbb{Z} : O(x) \implies x^{n} \in \mathbb{Z}: O(x^{n})$.]
-        By induction. Let, $x = 2j + 1$.
-        For $n = 0$, $x^{0} = 1$ which is odd.
-        Assume inductively that it is true for all $n$.
+    % Let, $O(x)$ and $E(x)$ be predicates for $x$ is odd and $x$ is even respectively.
+    % \begin{lemm}[Even + Odd is Odd. Even + Even is Even. Odd + Odd is Even]
+    %     Even plus odd is odd.
+    %     $e = 2i, o = 2j + 1$ so, $e + o = 2i + 2j + 1$ which is odd.
+
+    %     Odd plus Odd is even.
+    %     $e = 2i + 1, o = 2j + 1$ so, $e + o = 2i + 2j + 2$ which is even.
+
+    %     Even + Even is even.
+    %     $e = 2i, o = 2j$ so, $e + o = 2i + 2j$ which is even.
+    % \end{lemm}
+    % \begin{lemm}[$\forall n \in \mathbb{N} - \{0\}, x \in \mathbb{Z} : O(x) \implies x^{n} \in \mathbb{Z}: O(x^{n})$.]
+    %     By induction. Let, $x = 2j + 1$.
+    %     For $n = 0$, $x^{1} = x$ which is odd.
+    %     Assume inductively that it is true for all $n$.
         
-        Now, $x^{n + 1} = x * x^{n} = (2j + 1) * o$ for some odd number $o$.
-        $2jo + o$ is odd since $2jo$ is even and $o$ is odd. Even plus odd is odd.
-    \end{lemm}
+    %     Now, $x^{n + 1} = x * x^{n} = (2j + 1) * o$ for some odd number $o$.
+    %     $2jo + o$ is odd since $2jo$ is even and $o$ is odd. Even plus odd is odd.
+    % \end{lemm}
+    % \begin{lemm}[$\forall n \in \mathbb{N} - \{0\}, x \in \mathbb{Z} : E(x) \implies x^{n} \in \mathbb{Z}: E(x^{n})$.]
+    %     By induction. Let, $x = 2j$.
+    %     For $n = 0$, $x^{1} = x$ which is even.
+    %     Assume inductively that it is true for all $n$.
+        
+    %     Now, $x^{n + 1} = x * x^{n} = (2j) * e$ for some even number $e$.
+    %     $2je$ is even.
+    % \end{lemm}
+    \begin{proof}
+        For the forward implication:
+        Consider $w, x, y$ are even. Then,
+        $w=2i_{1}, x=2i_{2}, y=2i_{3}$.
+        So, $w^{2} + x^{2} + y^{2} = 2^{2}(i_{1}^{2}+i_{2}^{2}+i_{3}^{2}) = z^{2}$.
+        Since, $z \in \mathbb{Z^{+}}$, any integer solution to $2^{2}(i_{1}^{2}+i_{2}^{2}+i_{3}^{2}) = z^{2}$ will be divisible by $2$.
+        Thus $z$ is even.
+        
+        
+        For the backward implication:
+        If $z = 2j$. Then $2^{2}j^{2} = z^{2} = w^{2} + x^{2} + y^{2}$ gives
+        $j^{2} = (w/2)^{2} + (x/2)^{2} + (y/2)^{2}$.
+
+        Since $j \in \mathbb{Z^{+}} \implies j^{2} \in \mathbb{Z^{+}}$.
+        This implies that $w, x, y$ has to be divisible by $2$ so they are even.
+
+    \end{proof}
 \end{solution}
 
 \end{document}
