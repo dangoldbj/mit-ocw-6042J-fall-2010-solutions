@@ -189,6 +189,59 @@
         \item In every state reachable from the given configuration of the grid
         the parity of number of inversions is odd.
 
+        \item 
+        \begin{lemm}[A row move does not change the relative ordering]
+            A row move moves a tile from cell $i$ to either $i + 1$ or $i - 1$.
+            Nothing else moves. 
+            If you're going from $i$ to $i + 1$, 
+            everything leq than $i - 1$ and geq than $i + 2$ stays the same 
+            and relative order does not change.
+
+            If you're going from $i$ to $i - 1$,
+            everything leq than $i -2$ and geq than $i + 1$ stays the same
+            and relative order does not change.
+        \end{lemm}
+
+        \begin{lemm}[A column move changes the relative ordering of 3 pairs of letters]
+            A column move moves a tile from cell $i$ to either $i + 4$ or $i - 4$.
+        When an item moves 4 positions it changes order with 3 items $i + 1, i + 2, i + 3$ or $i - 1, i - 2, i - 3$.
+        \end{lemm}
+
+        \begin{proof}
+            By induction:
+            $P(n)$ be the proposition that after $n$ steps the parity of
+            the number of inversions is different from the parity of the
+            row containing the blank sqaure.
+
+            Base Case: $P(0)$ is true because parity of number of inversions (which is 1) is odd.
+            The parity of row containing the blank square (which is 4) is even.
+
+            Inductive Step: For the purposes of induction, assume $P(n)$ is true for all $n$.
+            Consider a sequence of $n + 1$ moves, $m_{1}, m_{2}, \cdots m_{n + 1}$.
+
+            Now by the inductive hypothesis, we know that
+            after $m_{1} \cdots m_{n}$ is the parity of
+            the number of inversions, $inv$ is different from the parity of the
+            row containing the blank sqaure, $i$.
+
+            % After $m_{1} \cdots m_{n}$ moves, the 
+
+            % \enumr{
+            %     \item blank sqaure in odd row and parity of number of inversions is even.
+            %     \item blank sqaure in even row and parity of number of inversions is odd.
+            % }
+            On the $m_{n + 1}$ move,
+            
+            A row move changes nothing so the property holds.
+            A column move has the effect $inv + 3$ or $inv - 3$ for number of inversions $inv$
+            and moves the blank square from row $i$ to either $i + 1$ or $i - 1$.
+            
+            The parity of both $i$ and $inv$ are changed.
+
+            Since the parity was different from $m_{1} \cdots m_{n}$ it will stay different on $m_{n + 1}$.
+            $P(n + 1)$ holds.
+        \end{proof}
+        \item
         \begin{proof}
             By Induction:
             $P(n)$ be the proposition that after $n$ steps the parity of
@@ -205,14 +258,11 @@
             Now, we know the parity of number of inversions does not change during
             $m_{n + 1}$. This implies that parity after $m_{1}, m_{2}, \cdots m_{n + 1}$
             is still odd. Thus, $P(n + 1)$ holds.
-
-
-
-
         \end{proof}
 
     }
 \end{solution}
+
 
 \end{document}
 
