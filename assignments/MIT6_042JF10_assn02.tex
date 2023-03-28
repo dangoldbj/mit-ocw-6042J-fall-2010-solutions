@@ -264,6 +264,32 @@
 \end{solution}
 
 
+\begin{solution}
+    By induction:
+    Let $P(n)$ be the proposition that in $n$-th generation,
+    $z_{n} \leq b_{n}$ where $z_{n}$ is number of Z-lings and $b_{n}$ is number of B-lings in generation $n$.
+
+    Base Case: $P(1)$ is true since $z_{1} = 200 \leq 800 = b_{1}$.
+    
+    Inductive Step: Assume $P(n)$ is true.
+    
+    For $n + 1$ generation, we know $z_{n} \leq b_{n}$ by assumption.
+
+    Now, if $z_{n} = b_{n}, z_{n + 1} = z_{n}$ and $b_{n + 1} = b_{n}$.
+
+    If $z_{n} < b_{n}$ then,
+    $z_{n + 1} = z_{n} + \floor{(b_{n} - z_{n}) / 2}$
+    and
+    $b_{n + 1} = b_{n} + 2 \cdot \floor{(b_{n} - z_{n}) / 2}$.
+
+    $z_{n + 1} < b_{n + 1}$.
+
+    This implies that $P(n + 1)$ holds.
+    Hence $P(n)$ is true for all $n$.
+
+    Since $z_{n} \leq b_{n}$ for all $n$, $z_{n} \leq 2b_{n}$ for all $n$.
+\end{solution}
+
 \end{document}
 
 %%% Local Variables:
